@@ -23,6 +23,47 @@ Usuario usuario = service.Map<Usuario>("SingleUsuarioMapper", reader);
 
 ```
 
+### Tipos de dados suportados
+Essa é a lista de tipos de dados que são mapeaveis atualmente
+(* ainda não possuem testes)
+
+```csharp
+bool
+bool? 
+Guid 
+Guid?
+object
+DateTime 
+DateTime? 
+*TimeSpan
+*TimeSpan?
+string 
+decimal 
+decimal? 
+double 
+double?
+float 
+float? 
+ushort 
+ushort? 
+uint 
+uint? 
+ulong 
+ulong? 
+short 
+short? 
+int 
+int? 
+long 
+long? 
+byte 
+byte? 
+sbyte 
+sbyte? 
+*char 
+*char? 
+```
+
 ### Mapeamento profundo
 
 O BooMapper suporta propriedades que são outros objetos, utilizando a sintaxe do C#, 
@@ -114,3 +155,15 @@ mas é necessário ter declarado o método set.
 
 - A mesma regra vale para construtores, todas as classes que serão mapeadas devem possuir um construtor sem parâmetros,
 podendo ser private, public, internal ou protected.
+
+## Onde eu vejo mais exemplos ?
+
+Veja o [projeto de teste do BooMapper](https://github.com/CWISoftware/CWI.BooMapper/blob/master/CWI.BooMapper/CWI.BooMapper.Tests/RelationalMapperTests.cs)
+
+Ou o [projeto de teste do BooCommands (por enquanto para MySQL)](https://github.com/CWISoftware/CWI.BooMapper/blob/master/CWI.BooMapper/CWI.BooCommands.Tests/MySql/MySqlCommandTests.cs)
+
+## Contribuições
+
+O BooMapper é novo e talvez não atenda alguma necessidades específica sua.
+Todos são livres para contribuir e ajudar a torna-lo melhor, pull requests
+são bem vindos.
