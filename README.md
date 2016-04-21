@@ -149,6 +149,8 @@ A service disponível recebe um parâmetro chamado "key". Esse parâmetro identi
 - O BooMapper foi desenvolvido para ser um Mapper "straightforward", quer dizer,
 os nomes e tipos de propriedades do IDataReader devem atender a classe sendo mapeada
 para que os cast's sejam válidos. Ele basicamente faz um mapeamento direto e reto do IDataReader para a classe.
+Essa limitação é mais uma limitação arquitetural do que técnica, visto que atualmente trabalhamos com o conceito de que
+o banco de dados é quem deve atender o domínio (negócio).
 
 - As propriedades que vão ser mapeadas não precisam ser public set, podendo ser private, internal , protected ou private,
 mas é necessário ter declarado o método set.
