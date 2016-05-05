@@ -46,6 +46,7 @@
     <Compile Include="Core\Oto\OtoMapBuilder.cs" />
     <Compile Include="Core\Oto\OtoMapBuilder`2.cs" />
     <Compile Include="Core\Oto\OtoMapper.cs" />
+    <Compile Include="Core\PropertyStack.cs" />
     <Compile Include="Core\Relational\ColumnMap.cs" />
     <Compile Include="Core\Relational\DataException.cs" />
     <Compile Include="Core\Relational\Methods.cs" />

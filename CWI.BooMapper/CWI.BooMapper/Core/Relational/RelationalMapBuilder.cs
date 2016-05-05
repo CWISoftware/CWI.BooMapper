@@ -12,20 +12,20 @@ namespace CWI.BooMapper.Core.Relational
     internal class RelationalMapBuilder
     {
         private readonly Type targetType;
-        private readonly int nestedLevel;
+        private readonly PropertyStack nestedStack;
 
-        public RelationalMapBuilder(Type targetType, int nestedLevel)
+        public RelationalMapBuilder(Type targetType, PropertyStack nestedStack)
         {
             if (!targetType.IsClass || targetType == Methods.TypeOfString)
             {
                 throw new ArgumentException($"{targetType.FullName} não é uma classe válida.");
             }
             this.targetType = targetType;
-            this.nestedLevel = nestedLevel < 0 ? 0 : nestedLevel;
+            this.nestedStack = nestedStack ?? new PropertyStack();
         }
 
         public RelationalMapBuilder(Type targetType)
-            : this(targetType, 0)
+            : this(targetType, null)
         {
         }
 
@@ -58,8 +58,10 @@ namespace CWI.BooMapper.Core.Relational
                 {
                     string subKey = Guid.NewGuid().ToString();
 
-                    RelationalMapBuilder gen = new RelationalMapBuilder(prop.PropertyType, nestedLevel + 1);
+                    RelationalMapBuilder gen = new RelationalMapBuilder(prop.PropertyType, nestedStack.Push(prop));
                     RelationalMapper activator = gen.Generate(reader, subKey);
+
+                    nestedStack.Pop();
 
                     RelationalMapperCache.Add(subKey, activator);
 
@@ -166,16 +168,24 @@ namespace CWI.BooMapper.Core.Relational
         private IEnumerable<ColumnMap> ReadColumns(IDataReader reader)
         {
             return reader.GetNames()
-                         .Where(prop => prop.GetNestedLevel() == nestedLevel)
-                         .Select(prop => new ColumnMap(prop, ParsePropertyName(prop, nestedLevel)));
+                         .Where(prop => prop.GetNestedLevel() == nestedStack.NestedLevel && IsPropertyMatch(prop))
+                         .Select(prop => new ColumnMap(prop, ParsePropertyName(prop, nestedStack.NestedLevel)));
         }
 
         private IEnumerable<string> ReadNestedColumns(IDataReader reader)
         {
             return reader.GetNames()
-                         .Where(prop => prop.GetNestedLevel() == nestedLevel + 1)
-                         .Select(prop => ReadNestedProperty(prop, nestedLevel + 1))
+                         .Where(prop => prop.GetNestedLevel() == nestedStack.NestedLevel + 1)
+                         .Select(prop => ReadNestedProperty(prop, nestedStack.NestedLevel + 1))
                          .Distinct();
+        }
+
+        private bool IsPropertyMatch(string prop)
+        {
+            if (nestedStack.NestedLevel == 0)
+                return true;
+
+            return string.Equals(prop.Substring(0, prop.LastIndexOf(".", StringComparison.Ordinal)), nestedStack.ToStackString());
         }
 
         private string ParsePropertyName(string name, int level)

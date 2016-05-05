@@ -693,6 +693,23 @@ namespace CWI.BooMapper.Tests
 
         [TestMethod]
         [TestCategory("Mapping")]
+        public void MapObjectsWithSameNestedLevelAndSameType()
+        {
+            MemoryDataReader reader = new MemoryDataReader();
+            reader.AddColumns(nameof(MapClass1.String));
+            reader.AddColumns(nameof(MapClass1.Nested) + "." + nameof(MapClass1.String));
+            reader.AddColumns(nameof(MapClass1.Nested2) + "." + nameof(MapClass1.String));
+
+            reader.AddValues("1","2","3");
+
+            MapClass1 result = service.Map<MapClass1>(MapName, reader);
+            Assert.AreEqual(result.String, "1");
+            Assert.AreEqual(result.Nested.String, "2");
+            Assert.AreEqual(result.Nested2.String, "3");
+        }
+
+        [TestMethod]
+        [TestCategory("Mapping")]
         public void MapFullNestedObject()
         {
             MemoryDataReader reader = new MemoryDataReader();

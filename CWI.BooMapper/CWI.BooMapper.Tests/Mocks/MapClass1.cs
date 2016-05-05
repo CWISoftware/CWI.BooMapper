@@ -8,6 +8,8 @@ namespace CWI.BooMapper.Tests.Mocks
 
         public MapClass1 Nested { get; set; }
 
+        public MapClass1 Nested2 { get; set; }
+
         public bool Boolean { get; set; }
 
         public bool? BooleanNullable { get; set; }

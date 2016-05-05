@@ -8,8 +8,8 @@
             ParsedName = parsedName;
         }
 
-        public string ReaderName { get; set; }
+        public string ReaderName { get; private set; }
 
-        public string ParsedName { get; set; }
+        public string ParsedName { get; private set; }
     }
 }
