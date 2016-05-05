@@ -18,11 +18,11 @@ namespace CWI.BooCommands.Tests.MySql
         public void Initialize()
         {
             MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder();
-            builder.Server = "localhost";
+            builder.Server = "127.0.0.1";
             builder.Port = 3306;
             builder.Database = "test";
             builder.UserID = "root";
-            builder.Password = "root";
+            builder.Password = "Password12!";
 
             database = new MySqlDatabase(new MySqlConnection(builder.ToString()));
 
