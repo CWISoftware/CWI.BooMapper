@@ -60,6 +60,7 @@
     <Compile Include="Services\Relational\RelationalMapperSettings.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="CWI.BooMapper.nuspec" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

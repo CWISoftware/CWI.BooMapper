@@ -1,0 +1,14 @@
+﻿<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>CWI.BooMapper</id>
+    <title>CWI.BooMapper</title>
+    <version>1.0.0</version>
+    <authors>Guilherme Pohlmann da Rosa</authors>
+    <owners>CWI Software</owners>
+    <description>Simple object mapper.</description>
+  </metadata>
+  <files>
+    <file src="**\*.dll" target="lib" />
+  </files>
+</package>
