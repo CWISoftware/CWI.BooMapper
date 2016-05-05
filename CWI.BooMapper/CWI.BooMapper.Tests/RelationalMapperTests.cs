@@ -32,7 +32,7 @@ namespace CWI.BooMapper.Tests
         private const string MapName = "MapClass";
 
         [TestMethod]
-        [TestCategory("Mapping")]
+        [TestCategory("RelationalMapping")]
         public void MapBoolean()
         {
             MemoryDataReader reader = new MemoryDataReader();
@@ -45,7 +45,7 @@ namespace CWI.BooMapper.Tests
         }
 
         [TestMethod]
-        [TestCategory("Mapping")]
+        [TestCategory("RelationalMapping")]
         [ExpectedException(typeof(Core.Relational.DataException))]
         public void TestInvalidCastExceptionHandler()
         {
@@ -57,7 +57,7 @@ namespace CWI.BooMapper.Tests
         }
 
         [TestMethod]
-        [TestCategory("Mapping")]
+        [TestCategory("RelationalMapping")]
         public void MapBooleanNullable()
         {
             MemoryDataReader reader = new MemoryDataReader();
@@ -70,7 +70,7 @@ namespace CWI.BooMapper.Tests
         }
 
         [TestMethod]
-        [TestCategory("Mapping")]
+        [TestCategory("RelationalMapping")]
         public void MapInt32()
         {
             MemoryDataReader reader = new MemoryDataReader();
@@ -83,7 +83,7 @@ namespace CWI.BooMapper.Tests
         }
 
         [TestMethod]
-        [TestCategory("Mapping")]
+        [TestCategory("RelationalMapping")]
         public void MapUInt32()
         {
             MemoryDataReader reader = new MemoryDataReader();
@@ -96,7 +96,7 @@ namespace CWI.BooMapper.Tests
         }
 
         [TestMethod]
-        [TestCategory("Mapping")]
+        [TestCategory("RelationalMapping")]
         public void MapUInt32Nullable()
         {
             MemoryDataReader reader = new MemoryDataReader();
@@ -109,7 +109,7 @@ namespace CWI.BooMapper.Tests
         }
 
         [TestMethod]
-        [TestCategory("Mapping")]
+        [TestCategory("RelationalMapping")]
         public void MapInt32Nullable()
         {
             MemoryDataReader reader = new MemoryDataReader();
@@ -122,7 +122,7 @@ namespace CWI.BooMapper.Tests
         }
 
         [TestMethod]
-        [TestCategory("Mapping")]
+        [TestCategory("RelationalMapping")]
         public void MapInt16()
         {
             MemoryDataReader reader = new MemoryDataReader();
@@ -135,7 +135,7 @@ namespace CWI.BooMapper.Tests
         }
 
         [TestMethod]
-        [TestCategory("Mapping")]
+        [TestCategory("RelationalMapping")]
         public void MapInt16Nullable()
         {
             MemoryDataReader reader = new MemoryDataReader();
@@ -148,7 +148,7 @@ namespace CWI.BooMapper.Tests
         }
 
         [TestMethod]
-        [TestCategory("Mapping")]
+        [TestCategory("RelationalMapping")]
         public void MapUInt16()
         {
             MemoryDataReader reader = new MemoryDataReader();
@@ -161,7 +161,7 @@ namespace CWI.BooMapper.Tests
         }
 
         [TestMethod]
-        [TestCategory("Mapping")]
+        [TestCategory("RelationalMapping")]
         public void MapUInt16Nullable()
         {
             MemoryDataReader reader = new MemoryDataReader();
@@ -174,7 +174,7 @@ namespace CWI.BooMapper.Tests
         }
 
         [TestMethod]
-        [TestCategory("Mapping")]
+        [TestCategory("RelationalMapping")]
         public void MapInt64()
         {
             MemoryDataReader reader = new MemoryDataReader();
@@ -187,7 +187,7 @@ namespace CWI.BooMapper.Tests
         }
 
         [TestMethod]
-        [TestCategory("Mapping")]
+        [TestCategory("RelationalMapping")]
         public void MapInt64Nullable()
         {
             MemoryDataReader reader = new MemoryDataReader();
@@ -200,7 +200,7 @@ namespace CWI.BooMapper.Tests
         }
 
         [TestMethod]
-        [TestCategory("Mapping")]
+        [TestCategory("RelationalMapping")]
         public void MapUInt64()
         {
             MemoryDataReader reader = new MemoryDataReader();
@@ -213,7 +213,7 @@ namespace CWI.BooMapper.Tests
         }
 
         [TestMethod]
-        [TestCategory("Mapping")]
+        [TestCategory("RelationalMapping")]
         public void MapUInt64Nullable()
         {
             MemoryDataReader reader = new MemoryDataReader();
@@ -226,7 +226,7 @@ namespace CWI.BooMapper.Tests
         }
 
         [TestMethod]
-        [TestCategory("Mapping")]
+        [TestCategory("RelationalMapping")]
         public void MapFloat()
         {
             MemoryDataReader reader = new MemoryDataReader();
@@ -239,7 +239,7 @@ namespace CWI.BooMapper.Tests
         }
 
         [TestMethod]
-        [TestCategory("Mapping")]
+        [TestCategory("RelationalMapping")]
         public void MapFloatNullable()
         {
             MemoryDataReader reader = new MemoryDataReader();
@@ -252,7 +252,7 @@ namespace CWI.BooMapper.Tests
         }
 
         [TestMethod]
-        [TestCategory("Mapping")]
+        [TestCategory("RelationalMapping")]
         public void MapDouble()
         {
             MemoryDataReader reader = new MemoryDataReader();
@@ -265,7 +265,7 @@ namespace CWI.BooMapper.Tests
         }
 
         [TestMethod]
-        [TestCategory("Mapping")]
+        [TestCategory("RelationalMapping")]
         public void MapDoubleNullable()
         {
             MemoryDataReader reader = new MemoryDataReader();
@@ -278,7 +278,7 @@ namespace CWI.BooMapper.Tests
         }
 
         [TestMethod]
-        [TestCategory("Mapping")]
+        [TestCategory("RelationalMapping")]
         public void MapDecimal()
         {
             MemoryDataReader reader = new MemoryDataReader();
@@ -291,7 +291,7 @@ namespace CWI.BooMapper.Tests
         }
 
         [TestMethod]
-        [TestCategory("Mapping")]
+        [TestCategory("RelationalMapping")]
         public void MapDecimalNullable()
         {
             MemoryDataReader reader = new MemoryDataReader();
@@ -304,7 +304,7 @@ namespace CWI.BooMapper.Tests
         }
 
         [TestMethod]
-        [TestCategory("Mapping")]
+        [TestCategory("RelationalMapping")]
         public void MapByte()
         {
             MemoryDataReader reader = new MemoryDataReader();
@@ -317,7 +317,7 @@ namespace CWI.BooMapper.Tests
         }
 
         [TestMethod]
-        [TestCategory("Mapping")]
+        [TestCategory("RelationalMapping")]
         public void MapByteNullable()
         {
             MemoryDataReader reader = new MemoryDataReader();
@@ -330,7 +330,7 @@ namespace CWI.BooMapper.Tests
         }
 
         [TestMethod]
-        [TestCategory("Mapping")]
+        [TestCategory("RelationalMapping")]
         public void MapSByte()
         {
             MemoryDataReader reader = new MemoryDataReader();
@@ -343,7 +343,7 @@ namespace CWI.BooMapper.Tests
         }
 
         [TestMethod]
-        [TestCategory("Mapping")]
+        [TestCategory("RelationalMapping")]
         public void MapSByteNullable()
         {
             MemoryDataReader reader = new MemoryDataReader();
@@ -356,7 +356,7 @@ namespace CWI.BooMapper.Tests
         }
 
         [TestMethod]
-        [TestCategory("Mapping")]
+        [TestCategory("RelationalMapping")]
         public void MapDateTime()
         {
             MemoryDataReader reader = new MemoryDataReader();
@@ -369,7 +369,7 @@ namespace CWI.BooMapper.Tests
         }
 
         [TestMethod]
-        [TestCategory("Mapping")]
+        [TestCategory("RelationalMapping")]
         public void MapDateTimeNullable()
         {
             MemoryDataReader reader = new MemoryDataReader();
@@ -382,7 +382,7 @@ namespace CWI.BooMapper.Tests
         }
 
         [TestMethod]
-        [TestCategory("Mapping")]
+        [TestCategory("RelationalMapping")]
         public void MapGuid()
         {
             Guid g = Guid.NewGuid();
@@ -397,7 +397,7 @@ namespace CWI.BooMapper.Tests
         }
 
         [TestMethod]
-        [TestCategory("Mapping")]
+        [TestCategory("RelationalMapping")]
         public void MapGuidNullable()
         {
             Guid? g = Guid.NewGuid();
@@ -412,7 +412,7 @@ namespace CWI.BooMapper.Tests
         }
 
         [TestMethod]
-        [TestCategory("Mapping")]
+        [TestCategory("RelationalMapping")]
         public void MapGuidAsString()
         {
             string g = Guid.NewGuid().ToString();
@@ -427,7 +427,7 @@ namespace CWI.BooMapper.Tests
         }
 
         [TestMethod]
-        [TestCategory("Mapping")]
+        [TestCategory("RelationalMapping")]
         public void MapGuidNullableAsString()
         {
             string g = Guid.NewGuid().ToString();
@@ -442,7 +442,7 @@ namespace CWI.BooMapper.Tests
         }
 
         [TestMethod]
-        [TestCategory("Mapping")]
+        [TestCategory("RelationalMapping")]
         public void MapObjectAsInt()
         {
             MemoryDataReader reader = new MemoryDataReader();
@@ -455,7 +455,7 @@ namespace CWI.BooMapper.Tests
         }
 
         [TestMethod]
-        [TestCategory("Mapping")]
+        [TestCategory("RelationalMapping")]
         public void MapObjectAsString()
         {
             MemoryDataReader reader = new MemoryDataReader();
@@ -468,7 +468,7 @@ namespace CWI.BooMapper.Tests
         }
 
         [TestMethod]
-        [TestCategory("Mapping")]
+        [TestCategory("RelationalMapping")]
         public void MapBaseClassObjectAsInt()
         {
             MemoryDataReader reader = new MemoryDataReader();
@@ -481,7 +481,7 @@ namespace CWI.BooMapper.Tests
         }
 
         [TestMethod]
-        [TestCategory("Mapping")]
+        [TestCategory("RelationalMapping")]
         public void MapString()
         {
             MemoryDataReader reader = new MemoryDataReader();
@@ -494,7 +494,7 @@ namespace CWI.BooMapper.Tests
         }
 
         [TestMethod]
-        [TestCategory("Mapping")]
+        [TestCategory("RelationalMapping")]
         public void MapFullObject()
         {
             MemoryDataReader reader = new MemoryDataReader();
@@ -593,7 +593,7 @@ namespace CWI.BooMapper.Tests
         }
 
         [TestMethod]
-        [TestCategory("Mapping")]
+        [TestCategory("RelationalMapping")]
         public void MapFullObjectWithNulls()
         {
             MemoryDataReader reader = new MemoryDataReader();
@@ -692,7 +692,7 @@ namespace CWI.BooMapper.Tests
         }
 
         [TestMethod]
-        [TestCategory("Mapping")]
+        [TestCategory("RelationalMapping")]
         public void MapObjectsWithSameNestedLevelAndSameType()
         {
             MemoryDataReader reader = new MemoryDataReader();
@@ -709,7 +709,7 @@ namespace CWI.BooMapper.Tests
         }
 
         [TestMethod]
-        [TestCategory("Mapping")]
+        [TestCategory("RelationalMapping")]
         public void MapFullNestedObject()
         {
             MemoryDataReader reader = new MemoryDataReader();
@@ -902,7 +902,7 @@ namespace CWI.BooMapper.Tests
         }
 
         [TestMethod]
-        [TestCategory("Mapping")]
+        [TestCategory("RelationalMapping")]
         public void MapFullMultipleNestedbjects()
         {
             MemoryDataReader reader = new MemoryDataReader();
@@ -1282,7 +1282,7 @@ namespace CWI.BooMapper.Tests
         }
 
         [TestMethod]
-        [TestCategory("Mapping")]
+        [TestCategory("RelationalMapping")]
         public void MapFullObjectCollection()
         {
             MemoryDataReader reader = new MemoryDataReader();
@@ -1449,7 +1449,7 @@ namespace CWI.BooMapper.Tests
         }
 
         [TestMethod]
-        [TestCategory("Performance")]
+        [TestCategory("RelationalMapping")]
         public void FasterThenHandCodeMappingForLargeCollections()
         {
             MemoryDataReader gmapperReader = new MemoryDataReader();
@@ -1612,7 +1612,7 @@ namespace CWI.BooMapper.Tests
         }
 
         [TestMethod]
-        [TestCategory("Performance")]
+        [TestCategory("RelationalMapping")]
         public void FasterThenHandCodeMappingForSmallCollections()
         {
             MemoryDataReader gmapperReader = new MemoryDataReader();
@@ -1775,7 +1775,7 @@ namespace CWI.BooMapper.Tests
         }
 
         [TestMethod]
-        [TestCategory("Performance")]
+        [TestCategory("RelationalMapping")]
         public void FasterThenHandCodeMappingForSingleObject()
         {
             MemoryDataReader gmapperReader = new MemoryDataReader();
