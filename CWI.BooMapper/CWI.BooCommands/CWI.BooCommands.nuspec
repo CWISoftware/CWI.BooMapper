@@ -1,0 +1,15 @@
+﻿<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>CWI.BooCommands</id>
+    <title>CWI.BooCommands</title>
+    <version>$version$</version>
+    <authors>CWI Software</authors>
+    <owners>CWI Software (www.cwi.com.br)</owners>
+    <copyright>Copyright CWI Software 2016</copyright>
+    <description>Simple object mapper.</description>
+  </metadata>
+  <files>
+    <file src="**\CWI.BooCommands.dll" target="lib" />
+  </files>
+</package>
