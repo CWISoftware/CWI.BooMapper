@@ -72,6 +72,33 @@ namespace CWI.BooCommands
             return mService.MapCollection<T>(key, ExecuteReader());
         }
 
+        public virtual IEnumerable<T> ExecuteMapperCollection<T>()
+        {
+            return ExecuteMapperCollection<T>(false);
+        }
+
+        public virtual IEnumerable<T> ExecuteMapperCollection<T>(bool useConvert)
+        {
+            List<T> result = new List<T>();
+
+            using (var reader = ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    if (useConvert)
+                    {
+                        result.Add((T)Convert.ChangeType(reader.GetValue(0), typeof(T)));
+                    }
+                    else
+                    {
+                        result.Add((T)reader.GetValue(0));
+                    }
+                }
+            }
+
+            return result;
+        }
+
         #region IDisposable Support
         private bool disposed;
 

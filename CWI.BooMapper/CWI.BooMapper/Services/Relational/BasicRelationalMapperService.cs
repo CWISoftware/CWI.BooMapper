@@ -82,40 +82,50 @@ namespace CWI.BooMapper.Services.Relational
 
         private TResult OnMap<TResult>(RelationalMapper mapper, IDataReader reader)
         {
-            TResult result;
-
-            if (reader.Read())
+            try
             {
-                result = (TResult)mapper(reader);
-            }
-            else
-            {
-                result = default(TResult);
-            }
+                TResult result;
 
-            if (settings.DisposeReader)
-            {
-                reader.Dispose();
-            }
+                if (reader.Read())
+                {
+                    result = (TResult)mapper(reader);
+                }
+                else
+                {
+                    result = default(TResult);
+                }
 
-            return result;
+                return result;
+            }
+            finally
+            {
+                if (settings.DisposeReader)
+                {
+                    reader.Dispose();
+                }
+            }
         }
 
         private IEnumerable<TResult> OnMapCollection<TResult>(RelationalMapper mapper, IDataReader reader)
         {
-            List<TResult> list = new List<TResult>();
-
-            while (reader.Read())
+            try
             {
-                list.Add((TResult)mapper(reader));
-            }
+                List<TResult> list = new List<TResult>();
 
-            if (settings.DisposeReader)
+                while (reader.Read())
+                {
+                    list.Add((TResult)mapper(reader));
+                }
+
+                return list;
+            }
+            finally
             {
-                reader.Dispose();
+                if (settings.DisposeReader)
+                {
+                    reader.Dispose();
+                }
             }
-
-            return list;
         }
     }
 }
