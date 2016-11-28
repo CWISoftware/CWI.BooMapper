@@ -62,7 +62,7 @@ namespace CWI.BooMapper.Services.Relational
             return OnMapCollection<TResult>(mapper, reader);
         }
 
-        private RelationalMapper GetOrGenerateMapper<TResult>(string key, IDataReader reader)
+        public RelationalMapper GetOrGenerateMapper<TResult>(string key, IDataReader reader)
         {
             RelationalMapper mapper;
 
