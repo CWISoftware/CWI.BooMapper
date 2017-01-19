@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CWI.BooMapper", "netstandar
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "CWI.BooMapper.Tests", "netstandard\src\CWI.BooMapper.Tests\CWI.BooMapper.Tests.xproj", "{C838008B-0BC5-4FAC-8030-7C2ACB9FE0BB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CWI.BooCommands", "netstandard\src\CWI.BooCommands\CWI.BooCommands.csproj", "{3ADB615A-2B2D-437C-84F2-0AD88CECD27B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -55,6 +57,10 @@ Global
 		{C838008B-0BC5-4FAC-8030-7C2ACB9FE0BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C838008B-0BC5-4FAC-8030-7C2ACB9FE0BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C838008B-0BC5-4FAC-8030-7C2ACB9FE0BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3ADB615A-2B2D-437C-84F2-0AD88CECD27B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3ADB615A-2B2D-437C-84F2-0AD88CECD27B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3ADB615A-2B2D-437C-84F2-0AD88CECD27B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3ADB615A-2B2D-437C-84F2-0AD88CECD27B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -63,5 +69,6 @@ Global
 		{D0480202-A621-4BBC-AD7A-629F71DAC2EF} = {326111C7-A2B2-4FCE-9FEA-81E5C30F7727}
 		{2B59D245-ABCE-4A8B-8858-EB541ADD698B} = {D0480202-A621-4BBC-AD7A-629F71DAC2EF}
 		{C838008B-0BC5-4FAC-8030-7C2ACB9FE0BB} = {D0480202-A621-4BBC-AD7A-629F71DAC2EF}
+		{3ADB615A-2B2D-437C-84F2-0AD88CECD27B} = {D0480202-A621-4BBC-AD7A-629F71DAC2EF}
 	EndGlobalSection
 EndGlobal

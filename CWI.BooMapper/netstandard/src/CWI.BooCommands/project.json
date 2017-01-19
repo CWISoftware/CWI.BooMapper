@@ -1,0 +1,23 @@
+﻿{
+  "supports": {},
+  "dependencies": {
+    "Microsoft.NETCore.Portable.Compatibility": "1.0.1",
+    "NETStandard.Library": "1.6.0",
+    "System.Data.Common": "4.3.0",
+    "CWI.BooMapper": {
+      "target": "project"
+    }
+  },
+  "frameworks": {
+    "netstandard1.6": {}
+  },
+  "buildOptions": {
+    "compile": {
+      "includeFiles": [
+        "../../../CWI.BooCommands/BaseCommand.cs",
+        "../../../CWI.BooCommands/IDatabase.cs"
+      ]
+    },
+    "define": [ "NETSTANDARD1_6" ]
+  }
+}
