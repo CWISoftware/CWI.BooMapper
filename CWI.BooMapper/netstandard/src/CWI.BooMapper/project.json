@@ -1,0 +1,33 @@
+﻿{
+  "supports": {
+  },
+  "dependencies": {
+    "Microsoft.NETCore.Portable.Compatibility": "1.0.1",
+    "NETStandard.Library": "1.6.0",
+    "System.Data.Common": "4.3.0",
+    "Sigil": "4.7.0"
+  },
+  "frameworks": {
+    "netstandard1.6": {}
+  },
+  "buildOptions": {
+    "compile": {
+      "includeFiles": [
+        "../../../CWI.BooMapper/Core/PropertyStack.cs",
+        "../../../CWI.BooMapper/Core/ThrowHelper.cs",
+        "../../../CWI.BooMapper/Core/Relational/ColumnMap.cs",
+        "../../../CWI.BooMapper/Core/Relational/DataException.cs",
+        "../../../CWI.BooMapper/Core/Relational/Methods.cs",
+        "../../../CWI.BooMapper/Core/Relational/RelationalMapBuilder.cs",
+        "../../../CWI.BooMapper/Core/Relational/RelationalMapper.cs",
+        "../../../CWI.BooMapper/Core/Relational/RelationalMapperCache.cs",
+        "../../../CWI.BooMapper/Core/Extensions/DataReaderExtensions.cs",
+        "../../../CWI.BooMapper/Core/Extensions/ReflectionExtensions.cs",
+        "../../../CWI.BooMapper/Services/Relational/BasicRelationalMapperService.cs",
+        "../../../CWI.BooMapper/Services/Relational/IRelationalMapperService.cs",
+        "../../../CWI.BooMapper/Services/Relational/RelationalMapperSettings.cs"
+      ]
+    },
+    "define": [ "NETSTANDARD1_6" ]
+  }
+}

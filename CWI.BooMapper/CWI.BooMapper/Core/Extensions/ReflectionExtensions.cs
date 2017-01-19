@@ -29,12 +29,16 @@ namespace CWI.BooMapper.Core.Extensions
 
         public static bool IsValueTypeOrString(this Type type)
         {
-            return type.IsValueType || type == Methods.TypeOfString;
+            return type.IsValueType() || type == Methods.TypeOfString;
         }
 
         public static bool IsEnumerable(this Type type)
         {
+#if NETSTANDARD1_6
+            return type.GetInterfaces().Any(t => t.GetTypeInfo().IsGenericType && t.GetTypeInfo().GetGenericTypeDefinition() == typeof(IEnumerable<>));
+#else
             return type.GetInterfaces().Any(t => t.IsGenericType && t.GetGenericTypeDefinition() == typeof(IEnumerable<>));
+#endif
         }
 
         public static ConstructorInfo GetCollectionConstructor(this Type type)
@@ -56,29 +60,41 @@ namespace CWI.BooMapper.Core.Extensions
 
         public static Type GetTypeOrUnderlyingType(this Type type)
         {
-            if (type.IsGenericType)
+#if NETSTANDARD1_6
+            TypeInfo _type = type.GetTypeInfo();
+#else
+            Type _type = type;
+#endif
+
+            if (_type.IsGenericType)
             {
-                return type.GetGenericArguments()[0].GetTypeOrUnderlyingType();
+                return _type.GetGenericArguments()[0].GetTypeOrUnderlyingType();
             }
-            if (type.IsEnum)
+            if (_type.IsEnum)
             {
-                return type.GetEnumUnderlyingType().GetTypeOrUnderlyingType();
+                return _type.GetEnumUnderlyingType().GetTypeOrUnderlyingType();
             }
-            if(type.IsArray)
+            if (_type.IsArray)
             {
-                return type.GetElementType();
+                return _type.GetElementType();
             }
             return type;
         }
 
         public static bool IsNullable(this Type type)
         {
-            if (!type.IsGenericType)
+#if NETSTANDARD1_6
+            TypeInfo _type = type.GetTypeInfo();
+#else
+            Type _type = type;
+#endif
+
+            if (!_type.IsGenericType)
             {
                 return false;
             }
 
-            return type.GetGenericTypeDefinition() == typeof(Nullable<>);
+            return _type.GetGenericTypeDefinition() == typeof(Nullable<>);
         }
 
         public static ConstructorInfo GetNullableConstructor(this Type type)
@@ -99,11 +115,29 @@ namespace CWI.BooMapper.Core.Extensions
 
         public static MethodInfo ResolveGenericMethod(this MethodInfo method, params Type[] types)
         {
-            if(method.IsGenericMethodDefinition)
+            if (method.IsGenericMethodDefinition)
             {
                 return method.MakeGenericMethod(types);
             }
             return method;
+        }
+
+        public static bool IsClass(this Type type)
+        {
+#if NETSTANDARD1_6
+            return type.GetTypeInfo().IsClass;
+#else
+            return type.IsClass;
+#endif
+        }
+
+        public static bool IsValueType(this Type type)
+        {
+#if NETSTANDARD1_6
+            return type.GetTypeInfo().IsValueType;
+#else
+            return type.IsValueType;
+#endif
         }
     }
 }

@@ -1,0 +1,29 @@
+{
+  "version": "1.0.0-*",
+  "buildOptions": {
+  },
+  "testRunner": "mstest",
+
+  "dependencies": {
+    "Microsoft.NETCore.App": {
+      "type": "platform",
+      "version": "1.0.1"
+    },
+    "System.Data.Common": "4.3.0",
+    "System.Data.SqlClient": "4.1.0",
+    "MSTest.TestFramework": "1.0.8-rc2",
+    "dotnet-test-mstest": "1.1.2-preview",
+    "CWI.BooMapper": {
+      "target": "project"
+    }
+  },
+
+  "frameworks": {
+    "netcoreapp1.0": {
+      "imports": [
+        "dnxcore50",
+        "portable-net45+win8"
+      ]
+    }
+  }
+}

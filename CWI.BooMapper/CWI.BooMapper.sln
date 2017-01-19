@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CWI.BooMapper", "CWI.BooMapper\CWI.BooMapper.csproj", "{0104675A-3608-4E84-96E7-565A6F2E5A76}"
 EndProject
@@ -12,6 +12,14 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CWI.BooCommands.MySql", "CWI.BooCommands.MySql\CWI.BooCommands.MySql.csproj", "{CB38535F-CF57-42E8-9616-329936BB7211}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CWI.BooCommands.Tests", "CWI.BooCommands.Tests\CWI.BooCommands.Tests.csproj", "{979086C5-C059-47ED-833C-E9691C9A050A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "netstandard", "netstandard", "{326111C7-A2B2-4FCE-9FEA-81E5C30F7727}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{D0480202-A621-4BBC-AD7A-629F71DAC2EF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CWI.BooMapper", "netstandard\src\CWI.BooMapper\CWI.BooMapper.csproj", "{2B59D245-ABCE-4A8B-8858-EB541ADD698B}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "CWI.BooMapper.Tests", "netstandard\src\CWI.BooMapper.Tests\CWI.BooMapper.Tests.xproj", "{C838008B-0BC5-4FAC-8030-7C2ACB9FE0BB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,8 +47,21 @@ Global
 		{979086C5-C059-47ED-833C-E9691C9A050A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{979086C5-C059-47ED-833C-E9691C9A050A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{979086C5-C059-47ED-833C-E9691C9A050A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B59D245-ABCE-4A8B-8858-EB541ADD698B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B59D245-ABCE-4A8B-8858-EB541ADD698B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B59D245-ABCE-4A8B-8858-EB541ADD698B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B59D245-ABCE-4A8B-8858-EB541ADD698B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C838008B-0BC5-4FAC-8030-7C2ACB9FE0BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C838008B-0BC5-4FAC-8030-7C2ACB9FE0BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C838008B-0BC5-4FAC-8030-7C2ACB9FE0BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C838008B-0BC5-4FAC-8030-7C2ACB9FE0BB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D0480202-A621-4BBC-AD7A-629F71DAC2EF} = {326111C7-A2B2-4FCE-9FEA-81E5C30F7727}
+		{2B59D245-ABCE-4A8B-8858-EB541ADD698B} = {D0480202-A621-4BBC-AD7A-629F71DAC2EF}
+		{C838008B-0BC5-4FAC-8030-7C2ACB9FE0BB} = {D0480202-A621-4BBC-AD7A-629F71DAC2EF}
 	EndGlobalSection
 EndGlobal

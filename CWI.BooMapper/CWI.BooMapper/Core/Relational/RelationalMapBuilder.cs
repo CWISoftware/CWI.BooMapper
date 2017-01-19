@@ -16,7 +16,7 @@ namespace CWI.BooMapper.Core.Relational
 
         public RelationalMapBuilder(Type targetType, PropertyStack nestedStack)
         {
-            if (!targetType.IsClass || targetType == Methods.TypeOfString)
+            if (!targetType.IsClass() || targetType == Methods.TypeOfString)
             {
                 throw new ArgumentException($"{targetType.FullName} não é uma classe válida.");
             }
@@ -160,7 +160,7 @@ namespace CWI.BooMapper.Core.Relational
         {
             Type realType = _type.GetTypeOrUnderlyingType();
 
-            return realType.IsValueType ||
+            return realType.IsValueType() ||
                    realType == Methods.TypeOfObject ||
                    realType == Methods.TypeOfString;
         }
